@@ -1,0 +1,45 @@
+# インストール・ログ
+
+```sh
+Looking in indexes: https://pypi.org/simple, https://www.piwheels.org/simple
+Collecting PySimpleGUIWx
+  Downloading https://files.pythonhosted.org/packages/39/20/21143c1304617050682a2f02b2eeb98c1c9f8acdb5b1f944e748df3b00d2/PySimpleGUIWx-0.17.2-py3-none-any.whl (71kB)
+    100% |████████████████████████████████| 71kB 1.0MB/s 
+Collecting WxPython (from PySimpleGUIWx)
+  Downloading https://files.pythonhosted.org/packages/b0/4d/80d65c37ee60a479d338d27a2895fb15bbba27a3e6bb5b6d72bb28246e99/wxPython-4.1.1.tar.gz (66.0MB)
+    100% |████████████████████████████████| 66.0MB 6.9kB/s 
+Collecting pillow (from WxPython->PySimpleGUIWx)
+  Downloading https://www.piwheels.org/simple/pillow/Pillow-8.2.0-cp37-cp37m-linux_armv7l.whl (1.3MB)
+    100% |████████████████████████████████| 1.3MB 112kB/s 
+Collecting six (from WxPython->PySimpleGUIWx)
+  Downloading https://files.pythonhosted.org/packages/d9/5a/e7c31adbe875f2abbb91bd84cf2dc52d792b5a01506781dbcf25c91daf11/six-1.16.0-py2.py3-none-any.whl
+Collecting numpy (from WxPython->PySimpleGUIWx)
+  Downloading https://www.piwheels.org/simple/numpy/numpy-1.20.3-cp37-cp37m-linux_armv7l.whl (11.6MB)
+    100% |████████████████████████████████| 11.6MB 32kB/s 
+Building wheels for collected packages: WxPython
+  Running setup.py bdist_wheel for WxPython ... error
+  Complete output from command /tmp/work/Python.PySimpleGuiWx.SetUp.20210618175521/src/env/bin/python3 -u -c "import setuptools, tokenize;__file__='/tmp/pip-install-93jgb_ka/WxPython/setup.py';f=getattr(tokenize, 'open', open)(__file__);code=f.read().replace('\r\n', '\n');f.close();exec(compile(code, __file__, 'exec'))" bdist_wheel -d /tmp/pip-wheel-pcc2c3u5 --python-tag cp37:
+  usage: -c [global_opts] cmd1 [cmd1_opts] [cmd2 [cmd2_opts] ...]
+     or: -c --help [cmd1 cmd2 ...]
+     or: -c --help-commands
+     or: -c cmd --help
+  
+  error: invalid command 'bdist_wheel'
+  
+  ----------------------------------------
+  Failed building wheel for WxPython
+  Running setup.py clean for WxPython
+Failed to build WxPython
+Installing collected packages: pillow, six, numpy, WxPython, PySimpleGUIWx
+  Running setup.py install for WxPython ... -
+```
+
+## ラズパイでは`pip install wxPython`で正常にインストールできない
+
+　自前でビルドせねばならないようだ。しかもPythonからビルドしろと。
+
+* [wxPythonをUbuntu20.04 on raspberry pi 4でビルド](https://qiita.com/devmikyom/items/ffde983fa73576170650)
+* [Raspberry Pi 3でのGUI開発wxGlade,wxPython](https://www.cloverfield.co.jp/2018/07/09/raspberry-pi-3%E3%81%A7%E3%81%AEgui%E9%96%8B%E7%99%BA/)
+* [How to install wxPython](https://wiki.wxpython.org/How%20to%20install%20wxPython#GNU.2FLinux_-_Raspbian_on_Raspberry_Pi)
+	* [Build wxPython On Raspberry Pi](https://wiki.wxpython.org/BuildWxPythonOnRaspberryPi)
+
