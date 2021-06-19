@@ -11,6 +11,7 @@ Run() {
 	python3 -m venv env
 	. "$HERE/env/bin/activate"
 
+	pip install wxPython
 	pip install --upgrade PySimpleGUIWx
 
 	pip freeze > requirements.txt
